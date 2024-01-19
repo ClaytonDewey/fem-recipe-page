@@ -1,0 +1,39 @@
+@use '../util' as *;
+
+ul,
+ol {
+  list-style-position: inside;
+  color: var(--clr-wenge-brown);
+}
+
+ul,
+ol {
+  li {
+    margin-left: rem(8);
+    margin-bottom: rem(8);
+  }
+}
+
+ul {
+  li {
+    list-style-type: none;
+    padding-left: rem(32);
+    background: transparent url(../images/bullet.svg) no-repeat left 50%;
+  }
+}
+
+ol {
+  li {
+    font-weight: 700;
+
+    span {
+      font-weight: 400;
+    }
+
+    &::before {
+      content: '';
+      width: rem(16);
+      display: inline-block;
+    }
+  }
+}
