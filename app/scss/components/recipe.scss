@@ -48,6 +48,7 @@ p {
   &__prep {
     background-color: var(--clr-snow);
     padding: rem(24);
+    border-radius: rem(12);
 
     h2 {
       font-size: var(--fs-med);
@@ -106,6 +107,31 @@ p {
         color: var(--clr-brandy-red);
         width: 50%;
       }
+    }
+  }
+
+  @include breakpoint(medium) {
+    max-width: rem(736);
+    padding: rem(40);
+    margin: rem(240) auto rem(20);
+    border-radius: rem(24);
+
+    img {
+      border-radius: rem(12);
+    }
+
+    &__body {
+      padding: rem(40) 0 0;
+    }
+
+    &__header {
+      h1 {
+        font-size: var(--fs-xxlarge);
+      }
+    }
+
+    &__prep {
+      padding: rem(28);
     }
   }
 }
