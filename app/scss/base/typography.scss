@@ -10,7 +10,9 @@ ul,
 ol {
   li {
     margin-left: rem(8);
-    margin-bottom: rem(8);
+    &:not(:last-child) {
+      margin-bottom: rem(8);
+    }
   }
 }
 
@@ -22,18 +24,35 @@ ul {
   }
 }
 
+// https://codepen.io/erinesullivan/pen/qGrdGV
 ol {
+  counter-reset: steps;
   li {
-    font-weight: 700;
+    counter-increment: steps;
+    list-style: none;
+    padding: 0 0 0 rem(32);
+    position: relative;
 
-    span {
-      font-weight: 400;
+    &::before,
+    &::after {
+      content: '';
+      // height: 3rem;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      width: rem(32);
     }
 
     &::before {
-      content: '';
-      width: rem(16);
-      display: inline-block;
+      // align-items: flex-end;
+      content: counter(steps) '.';
+      color: var(--clr-brandy-red);
+      font-weight: 700;
+      // display: flex;
+      // justify-content: flex-end;
+      // padding: 0.125em 0.25em;
+      z-index: 1;
     }
   }
 }
