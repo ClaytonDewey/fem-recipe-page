@@ -90,12 +90,21 @@ p {
       vertical-align: top;
       border-collapse: collapse;
 
-      > :not(caption) > * > * {
-        padding: 10px 20px;
+      tr {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        gap: rem(16);
       }
 
-      tr:not(:last-child) {
-        border-bottom: 1px solid var(--clr-white-coffee);
+      th,
+      td {
+        width: 50%;
+      }
+
+      th {
+        padding-left: rem(32);
       }
 
       th {
@@ -104,8 +113,23 @@ p {
 
       td {
         font-weight: 700;
-        color: var(--clr-brandy-red);
+        color: var(--clr-nutmeg);
         width: 50%;
+      }
+
+      tr:not(:last-child) {
+        border-bottom: 1px solid var(--clr-white-coffee);
+        td,
+        th {
+          padding-bottom: rem(11);
+        }
+      }
+
+      tr:not(:first-child) {
+        td,
+        th {
+          padding-top: rem(11);
+        }
       }
     }
   }
@@ -113,7 +137,7 @@ p {
   @include breakpoint(medium) {
     max-width: rem(736);
     padding: rem(40);
-    margin: rem(126) auto rem(20);
+    margin: rem(123) auto rem(100);
     border-radius: rem(24);
 
     img {
